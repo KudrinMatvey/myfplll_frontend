@@ -1,0 +1,13 @@
+.matrix-input {
+    &__matrix-wrapper {
+        background-color: lightgray;
+    }
+    &__matrix-column-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    &__matrix-row-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+}
