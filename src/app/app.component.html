@@ -1,1 +1,5 @@
-<matrix-input></matrix-input>
+<div class="main">
+  <matrix-input (matrix)="setMatrix($event)"></matrix-input>
+  <action-buttons [matrix]="matrix" (solution)="setSolution($event)" (graphBasis)="setBasis($event)"></action-buttons>
+  <output [solution]="solution" [basis]="basis" ></output>
+</div>

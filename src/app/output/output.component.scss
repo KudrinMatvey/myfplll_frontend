@@ -1,0 +1,19 @@
+.matrix-output {
+  &__matrix-wrapper {
+    background-color: lightgray;
+  }
+  &__matrix-column-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+
+  }
+  &__matrix-row-wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+  }
+  &__matrix-row-item {
+    max-width: 60px;
+  }
+}

@@ -1,0 +1,26 @@
+<mat-card *ngFor="let s of solutionValues; index as j">
+  <mat-card-title>
+    {{solutionNames[j]}}
+  </mat-card-title>
+  {{solutionValues[j][0].length}}
+  <ng-container
+    *ngTemplateOutlet="solutionValues[j][0].length === undefined ? vectorDisplay : matrixDisplay; context: {sol: s}">
+  </ng-container>
+</mat-card>
+<mat-card *ngIf="graphShown && basis && (basis.length === 2 || basis.length === 3)">
+  <mat-card-title>
+    Решетка
+  </mat-card-title>
+  <plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+</mat-card>
+<ng-template #vectorDisplay let-sol="sol">
+  v = [{{sol.join(', ')}}]
+</ng-template>
+<ng-template #matrixDisplay let-sol="sol">
+  <div class="matrix-output__matrix-row-wrapper">
+    <div class="matrix-output__matrix-column-wrapper" *ngFor="let column of sol; index as ind">
+      b{{ind}}
+      <div *ngFor="let i of column">{{i}}</div>
+    </div>
+  </div>
+</ng-template>

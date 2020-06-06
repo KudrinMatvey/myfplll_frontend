@@ -2,12 +2,15 @@
     &__matrix-wrapper {
         background-color: lightgray;
     }
-    &__matrix-column-wrapper {
-        display: flex;
-        flex-direction: row;
+  &__matrix-form{
+    display: flex;
+    flex-direction: row;
     }
     &__matrix-row-wrapper {
         display: flex;
         flex-direction: column;
+    }
+    &__matrix-row-item {
+        max-width: 60px;
     }
 }

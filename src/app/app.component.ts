@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'svp';
+  matrix;
+  solution = {};
+  basis;
+  setMatrix(n) {
+    this.matrix = n;
+  }
+  setSolution(s) {
+    this.solution = {...s};
+  }
+  setBasis(s) {
+    this.basis = [...s];
+  }
 }

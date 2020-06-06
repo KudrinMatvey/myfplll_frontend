@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "svp"
+  "defaultProject": "svp",
+  "cli": {
+    "analytics": false
+  }
 }

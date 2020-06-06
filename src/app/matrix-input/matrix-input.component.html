@@ -1,27 +1,22 @@
-<h4>Basic mat-select</h4>
 <form>
-
   <mat-form-field>
     <mat-label>Измерение матрицы</mat-label>
-    <mat-select [formControl]="selectionControl"  name="dimension"  ngDefaultControl  (selectionChange)="selectionChange($event)">
-      <mat-option *ngFor="let d of dimensions">
+    <mat-select matNativeControl (selectionChange)="selectionChange($event)">
+      <mat-option *ngFor="let d of dimensions" [value]="d">
         {{d}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-  
 </form>
-<div class = "matrix-input__matrix-wrapper">
-
-  <form>
-    <div class="matrix-input__matrix-column-wrapper" *ngFor="let colControl of columsFormArray.controls; index as i">
-      <div class="matrix-input__matrix-row-wrapper" *ngFor="let rowControl of colControl.controls; index as j">
-        <mat-form-field [formControl]="rowControl" class="example-full-width">
+<div class="matrix-input__matrix-wrapper" *ngIf="currentDimension !== 0">
+  <form class="matrix-input__matrix-form">
+    <div class="matrix-input__matrix-row-wrapper" *ngFor="let colControl of columsFormArray.controls; index as i">
+      <div *ngFor="let rowControl of colControl.controls; index as j">
+        <mat-form-field matNativeControl (stateChanges)="outputMatrix()" class="matrix-input__matrix-row-item">
           <mat-label>b {{i + ', ' + j}}</mat-label>
-          <input matInput placeholder="0">
+          <input matInput [formControl]="rowControl" placeholder="0" type="number" step="1">
         </mat-form-field>
       </div>
     </div>
   </form>
-
 </div>
