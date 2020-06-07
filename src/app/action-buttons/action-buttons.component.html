@@ -5,8 +5,11 @@
     <button mat-button color="primary" (click)="solve(methods.gaussWithBound)">Gauss Sieve с оценкой Минковского
     </button>
     <button mat-button color="primary" (click)="solve(methods.gauss)">Gauss Sieve</button>
-    <button mat-button color="primary" (click)="solve(methods.voronoi)">Диаграмма Вороного</button>
+    <button mat-button color="primary" *ngIf="matrix.length < 10" (click)="solve(methods.voronoi)">Диаграмма Вороного
+    </button>
     <button mat-button color="primary" (click)="solve(methods.lll)">LLL</button>
-    <button mat-button color="primary" *ngIf="matrix.length === 2 || matrix.length === 3" (click)="draw()">Нарисовать решетку</button>
+    <button mat-button color="primary" *ngIf="matrix.length === 2 || matrix.length === 3" (click)="draw()">Нарисовать
+      решетку
+    </button>
   </div>
 </section>

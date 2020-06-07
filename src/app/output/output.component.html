@@ -1,8 +1,7 @@
-<mat-card *ngFor="let s of solutionValues; index as j">
+<mat-card class="matrix-output__solutions" *ngFor="let s of solutionValues; index as j">
   <mat-card-title>
     {{solutionNames[j]}}
   </mat-card-title>
-  {{solutionValues[j][0].length}}
   <ng-container
     *ngTemplateOutlet="solutionValues[j][0].length === undefined ? vectorDisplay : matrixDisplay; context: {sol: s}">
   </ng-container>

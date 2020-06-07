@@ -35,7 +35,7 @@ export class ActionButtonsComponent implements OnInit {
   graphBasis = new EventEmitter<any>();
 
   error = false;
-  constructor(private api: ApiService) {}
+  constructor(public api: ApiService) {}
 
   ngOnInit(): void {
     this.solutions = {};

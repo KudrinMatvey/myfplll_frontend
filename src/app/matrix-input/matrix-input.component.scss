@@ -9,6 +9,8 @@
     &__matrix-row-wrapper {
         display: flex;
         flex-direction: column;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     &__matrix-row-item {
         max-width: 60px;

@@ -1,5 +1,15 @@
 <div class="main">
+  <h1>
+    SVP-Solver
+  </h1>
+  <app-loader></app-loader>
   <matrix-input (matrix)="setMatrix($event)"></matrix-input>
+  <div class="action-buttons__err" *ngIf="api.err">
+    {{api.err}}
+  </div>
   <action-buttons [matrix]="matrix" (solution)="setSolution($event)" (graphBasis)="setBasis($event)"></action-buttons>
   <output [solution]="solution" [basis]="basis" ></output>
 </div>
+<footer>
+  Автор веб-приложения: Кудрин Матвей
+</footer>
